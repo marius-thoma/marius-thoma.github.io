@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTW Härtetechnik · Marius Thoma Wärmebehandlungsservice e. K.</title>
+  <meta name="description" content="MTW Härtetechnik – Wärmebehandlung, Härte-, Beschichtungs- und Nitriertechnik aus Waldbröl. Härten, Glühen, Nitrieren, Beschichten und Industrielabor. Kostenfreie Abholung und Beratung vor Ort." />
+  <meta name="keywords" content="Härterei, Härtetechnik, Wärmebehandlung, Einsatzhärten, Nitrieren, Vakuumhärten, Salzbad, Induktivhärten, Beschichtung, Eloxieren, Verzinken, Waldbröl, Marius Thoma, MTW" />
+
+  <link rel="canonical" href="https://www.mtw-online.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MTW Härtetechnik · Marius Thoma Wärmebehandlungsservice e. K." />
+  <meta property="og:description" content="Wärmebehandlung, Härte-, Beschichtungs- und Nitriertechnik aus Waldbröl. Kostenfreie Abholung & Beratung vor Ort." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mtw-online.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Stahl / Metall */
+      --steel-900:  #0e1013;
+      --steel-800:  #14171c;
+      --steel-700:  #1c2027;
+      --steel-600:  #262b33;
+      --steel-500:  #333944;
+      --line:       rgba(255,255,255,0.09);
+      --line-strong:rgba(255,255,255,0.16);
+
+      /* Glut / Schmiede-Akzent */
+      --ember:      #ff6a1a;
+      --ember-hot:  #ff8f3c;
+      --ember-deep: #d84a06;
+      --spark:      #ffc76b;
+
+      --text:       #e9ecf1;
+      --text-mid:   #b3bac6;
+      --text-dim:   #7d8493;
+
+      --radius:     10px;
+      --maxw:       1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--steel-900);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Gebürstete-Stahl-Textur als dezenter Overlay */
+    .brushed {
+      background-image:
+        repeating-linear-gradient(90deg,
+          rgba(255,255,255,0.02) 0px,
+          rgba(255,255,255,0.02) 1px,
+          rgba(0,0,0,0.03) 2px,
+          rgba(0,0,0,0.03) 3px);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+    h1, h2, h3, .logo, .stat-num {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+    }
+
+    /* ── Navigation ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(14,16,19,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem;
+    }
+    .logo {
+      font-size: 22px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .logo b { color: var(--ember); }
+    .logo .mark {
+      width: 26px; height: 26px; border-radius: 5px;
+      background: linear-gradient(135deg, var(--ember-hot), var(--ember-deep));
+      box-shadow: 0 0 14px rgba(255,106,26,0.5);
+      display: inline-block;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: var(--text-mid);
+      text-transform: uppercase; letter-spacing: 0.06em; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ember-hot); }
+    .nav-toggle { display: none; background: none; border: 0; color: var(--text);
+      font-size: 26px; cursor: pointer; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 7rem 0 6rem;
+      background:
+        radial-gradient(1200px 500px at 75% -10%, rgba(255,106,26,0.22), transparent 60%),
+        radial-gradient(800px 400px at 10% 110%, rgba(255,143,60,0.10), transparent 60%),
+        linear-gradient(180deg, var(--steel-800), var(--steel-900));
+    }
+    /* glühende Funken / Hitzeschimmer */
+    .hero::after {
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,199,107,0.7), transparent),
+        radial-gradient(2px 2px at 80% 20%, rgba(255,143,60,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 65% 65%, rgba(255,199,107,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 35% 75%, rgba(255,143,60,0.5), transparent);
+      opacity:.7;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 760px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--ember-hot); margin-bottom: 1.4rem;
+      border: 1px solid rgba(255,106,26,0.35); border-radius: 999px;
+      padding: .4rem .9rem; background: rgba(255,106,26,0.06);
+    }
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 .glow {
+      background: linear-gradient(90deg, var(--spark), var(--ember-hot), var(--ember-deep));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 40px rgba(255,106,26,0.25);
+    }
+    .hero p.lead { font-size: 1.2rem; color: var(--text-mid); max-width: 620px; margin-bottom: 2.2rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-weight: 600; font-size: 15px; padding: .85rem 1.6rem; border-radius: var(--radius);
+      cursor: pointer; transition: transform .15s, box-shadow .2s, background .2s; border: 0;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--ember-hot), var(--ember-deep));
+      color: #fff; box-shadow: 0 6px 24px rgba(255,106,26,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,106,26,0.5); }
+    .btn-ghost {
+      background: transparent; color: var(--text); border: 1px solid var(--line-strong);
+    }
+    .btn-ghost:hover { border-color: var(--ember-hot); color: var(--ember-hot); }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── USP-Streifen ── */
+    .usp {
+      background: var(--steel-800); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .usp .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; padding: 0; }
+    .usp-item { padding: 2rem 1.5rem; }
+    .usp-item + .usp-item { border-left: 1px solid var(--line); }
+    .usp-item h3 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: .4rem; color: var(--ember-hot); }
+    .usp-item p { font-size: .95rem; color: var(--text-mid); }
+
+    /* ── Sections ── */
+    section.block { padding: 5.5rem 0; }
+    .section-head { max-width: 640px; margin-bottom: 3rem; }
+    .section-head .kicker {
+      font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em;
+      color: var(--ember); margin-bottom: .8rem; display: block;
+    }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); text-transform: uppercase; margin-bottom: 1rem; }
+    .section-head p { color: var(--text-mid); font-size: 1.05rem; }
+
+    /* Über uns */
+    .about { background: var(--steel-800); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: start; }
+    .about-grid p { color: var(--text-mid); margin-bottom: 1.1rem; }
+    .signature { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--text); margin-top: 1.5rem; }
+    .signature span { display: block; font-family: 'Inter'; font-size: .9rem; color: var(--text-dim); font-weight: 400; }
+    .about-card {
+      background: var(--steel-700); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.8rem; position: relative; overflow: hidden;
+    }
+    .about-card::before {
+      content:""; position:absolute; top:0; left:0; width:4px; height:100%;
+      background: linear-gradient(180deg, var(--ember-hot), var(--ember-deep));
+    }
+    .about-card h3 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1rem; }
+    .about-card ul { list-style: none; }
+    .about-card li { padding: .55rem 0; border-bottom: 1px solid var(--line); color: var(--text-mid); font-size: .95rem;
+      display: flex; align-items: center; gap: .6rem; }
+    .about-card li:last-child { border-bottom: 0; }
+    .about-card li::before { content:"✦"; color: var(--ember); font-size: .8rem; }
+
+    /* Leistungsspektrum */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .svc {
+      background: var(--steel-700); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.8rem; transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .svc:hover { border-color: rgba(255,106,26,0.5); transform: translateY(-3px);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.4); }
+    .svc .ico {
+      width: 46px; height: 46px; border-radius: 9px; margin-bottom: 1.1rem;
+      display: grid; place-items: center; font-size: 22px;
+      background: linear-gradient(135deg, rgba(255,143,60,0.18), rgba(216,74,6,0.12));
+      border: 1px solid rgba(255,106,26,0.3);
+    }
+    .svc h3 { font-size: 1.25rem; text-transform: uppercase; margin-bottom: .7rem; }
+    .svc ul { list-style: none; }
+    .svc li { font-size: .9rem; color: var(--text-mid); padding: .3rem 0; padding-left: 1rem; position: relative; }
+    .svc li::before { content:"–"; position: absolute; left: 0; color: var(--ember); }
+    .svc .dim { color: var(--text-dim); font-size: .82rem; margin-top: .6rem; }
+
+    /* Labor Banner */
+    .lab {
+      background:
+        radial-gradient(700px 300px at 85% 50%, rgba(255,106,26,0.16), transparent 60%),
+        var(--steel-800);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .lab-list { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+    .chip {
+      font-size: .85rem; padding: .5rem 1rem; border-radius: 999px;
+      background: var(--steel-600); border: 1px solid var(--line-strong); color: var(--text-mid);
+    }
+
+    /* Kontakt */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .form-field { margin-bottom: 1.1rem; }
+    .form-field label { display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-dim); margin-bottom: .4rem; font-weight: 600; }
+    .form-field input, .form-field textarea {
+      width: 100%; background: var(--steel-700); border: 1px solid var(--line-strong);
+      border-radius: 8px; padding: .8rem 1rem; color: var(--text); font-size: .95rem; font-family: inherit;
+      transition: border-color .2s;
+    }
+    .form-field input:focus, .form-field textarea:focus {
+      outline: none; border-color: var(--ember-hot); box-shadow: 0 0 0 3px rgba(255,106,26,0.15);
+    }
+    .form-field textarea { resize: vertical; min-height: 140px; }
+    .form-note { font-size: .8rem; color: var(--text-dim); margin-top: 1rem; }
+    .hp { position: absolute; left: -9999px; }
+
+    .contact-info { background: var(--steel-700); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; }
+    .contact-info h3 { text-transform: uppercase; font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .ci-row { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .ci-row:last-child { border-bottom: 0; }
+    .ci-ico { font-size: 1.3rem; color: var(--ember-hot); }
+    .ci-row .lbl { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); }
+    .ci-row .val { color: var(--text); font-size: 1rem; }
+    .ci-row a.val:hover { color: var(--ember-hot); }
+
+    /* Footer */
+    footer.site {
+      background: var(--steel-900); border-top: 1px solid var(--line); padding: 3rem 0 2rem;
+    }
+    .foot-grid { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+    .foot-grid .logo { font-size: 18px; margin-bottom: .8rem; }
+    .foot-col p { color: var(--text-dim); font-size: .9rem; }
+    .foot-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .foot-links a { color: var(--text-mid); font-size: .9rem; }
+    .foot-links a:hover { color: var(--ember-hot); }
+    .copyright { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+      color: var(--text-dim); font-size: .82rem; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid, .lab-grid, .contact-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column;
+        background: var(--steel-800); border-bottom: 1px solid var(--line); padding: 1rem 1.5rem; gap: 1rem;
+      }
+      .usp .wrap { grid-template-columns: 1fr; }
+      .usp-item + .usp-item { border-left: 0; border-top: 1px solid var(--line); }
+      .services-grid { grid-template-columns: 1fr; }
+      section.block { padding: 4rem 0; }
+    }
+  </style>
+</head>
+<body class="brushed">
+
+  <!-- ── Navigation ── -->
+  <header>
+    <nav>
+      <a href="#top" class="logo"><span class="mark"></span> M<b>T</b>W</a>
+      <ul class="nav-links" id="navlinks">
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="#ueber">Über uns</a></li>
+        <li><a href="#labor">Labor</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navtoggle" aria-label="Menü">☰</button>
+    </nav>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">● Härte- · Beschichtungs- · Nitriertechnik</span>
+      <h1>Metall, das <span class="glow">Belastung</span> aushält.</h1>
+      <p class="lead">
+        MTW Härtetechnik ist Ihr flexibles Dienstleistungsunternehmen für die professionelle
+        Wärmebehandlung von Bauteilen. Präzise, termintreu und zu marktüblichen Preisen –
+        mit kostenfreier Abholung und persönlicher Beratung vor Ort.
+      </p>
+      <div class="hero-cta">
+        <a href="#kontakt" class="btn btn-primary">Anfrage senden →</a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungsspektrum ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── USP ── -->
+  <div class="usp">
+    <div class="wrap">
+      <div class="usp-item">
+        <h3>Kostenfreie Abholung</h3>
+        <p>Abholung und Anlieferung Ihrer Bauteile mit unseren eigenen Fahrzeugen – ohne Zusatzkosten.</p>
+      </div>
+      <div class="usp-item">
+        <h3>Beratung vor Ort</h3>
+        <p>Ausführliche Werkstoff- und Wärmebehandlungsberatung gemeinsam mit Ihrem Personal.</p>
+      </div>
+      <div class="usp-item">
+        <h3>Schnelle Abwicklung</h3>
+        <p>Unkomplizierte, exakte Auftragsabwicklung zu marktüblichen und abgestimmten Preisen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Über uns ── -->
+  <section class="block about" id="ueber">
+    <div class="wrap about-grid">
+      <div>
+        <span class="kicker">Über uns</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.8rem);text-transform:uppercase;margin-bottom:1.4rem;">
+          Wärmebehandlung als Handwerk und Wissenschaft
+        </h2>
+        <p>
+          Als flexibles und modernes Dienstleistungsunternehmen genießen bei uns die Qualität
+          der behandelten Bauteile und die damit verbundene Kundenzufriedenheit oberste Priorität.
+        </p>
+        <p>
+          Von Einsatzhärten über Nitrieren und Glühen bis hin zu Beschichtungs- und Schweißtechnik
+          decken wir das gesamte Spektrum der Wärme- und Oberflächenbehandlung ab. Für jede Aufgabe
+          wählen wir gemeinsam mit Ihnen das passende Verfahren – abgestimmt auf Werkstoff,
+          Verwendungszweck und geforderte Eigenschaften.
+        </p>
+        <p>
+          Für Rückfragen stehen wir Ihnen jederzeit gerne telefonisch sowie persönlich zur Verfügung.
+        </p>
+        <div class="signature">
+          Marius Thoma
+          <span>Inhaber · Wärmebehandlungsservice e. K.</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>Ihre Vorteile</h3>
+        <ul>
+          <li>Über 20 Verfahren aus einer Hand</li>
+          <li>Kostenfreie Abholung &amp; Anlieferung</li>
+          <li>Werkstoffberatung vor Ort</li>
+          <li>Eigenes Industrielabor</li>
+          <li>Marktübliche, faire Preise</li>
+          <li>Termintreue Auftragsabwicklung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Leistungsspektrum ── -->
+  <section class="block" id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Leistungsspektrum</span>
+        <h2>Verfahren im Überblick</h2>
+        <p>Vom Härten bis zur Oberflächenveredelung – das komplette Programm der Wärme- und Oberflächenbehandlung. <a href="leistungen.html" style="color:var(--ember-hot);">Alle Verfahren mit Details ansehen →</a></p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="svc">
+          <div class="ico">🔥</div>
+          <h3>Härten</h3>
+          <ul>
+            <li>Einsatzhärten im Salzbad (Einhärtetiefe 0,4–1,2 mm)</li>
+            <li>Vakuumverfahren bis über 1.100&nbsp;°C</li>
+            <li>Salzbadverfahren</li>
+            <li>Induktiv- &amp; Flammhärten (bis Ø 1.000 × 10.000&nbsp;mm, 16&nbsp;t)</li>
+            <li>Einzelzahnhärtung bis Ø 5.500&nbsp;mm</li>
+            <li>Tiefkühlen</li>
+          </ul>
+          <p class="dim">max. Nutzmasse bis Ø 700 × 1.000&nbsp;mm (Salzbad)</p>
+        </div>
+
+        <div class="svc">
+          <div class="ico">🌡️</div>
+          <h3>Glühen &amp; Anlassen</h3>
+          <ul>
+            <li>Spannungsarmglühen (mit / ohne Schutzgas)</li>
+            <li>Weich-, Normal- &amp; Lösungsglühen</li>
+            <li>Anlassen bis 200&nbsp;°C und 200–700&nbsp;°C</li>
+          </ul>
+          <p class="dim">Nutzmasse bis Ø 1.350–7.300&nbsp;mm</p>
+        </div>
+
+        <div class="svc">
+          <div class="ico">⚗️</div>
+          <h3>Nitrieren</h3>
+          <ul>
+            <li>Gasnitrieren (Nht 0,1–1,0&nbsp;mm), Voll- &amp; Teilnitrierung</li>
+            <li>Plasmanitrieren (Nht 0,1–0,6&nbsp;mm)</li>
+            <li>Badnitrieren (bis Ø 500 × 800&nbsp;mm)</li>
+            <li>Nitrocarburieren (bis Ø 2.500 × 3.400&nbsp;mm)</li>
+          </ul>
+          <p class="dim">Öfen bis Ø 3.000&nbsp;mm Nutzdurchmesser</p>
+        </div>
+
+        <div class="svc">
+          <div class="ico">⚙️</div>
+          <h3>Beschichten &amp; Veredeln</h3>
+          <ul>
+            <li>Galvanisches Verzinken (blau-/gelb-chromatiert)</li>
+            <li>Eloxieren (EV1 Silber – EV6 Schwarz)</li>
+            <li>Chemisch Vernickeln (bis 1.200&nbsp;mm Länge)</li>
+            <li>PVD- &amp; CVD-Beschichtung (TiC / TiC-TiN)</li>
+            <li>Brünieren, Beizen, Phosphatieren, Black-Ox</li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <div class="ico">🛠️</div>
+          <h3>Weitere Verfahren</h3>
+          <ul>
+            <li>Schweißtechnik (Elektroden-, Schutzgas-, Reparaturschweißen)</li>
+            <li>Trockenstrahlen / Reinigungsstrahlen</li>
+            <li>Richten (Pressdruck bis 800&nbsp;t, Länge bis 10.000&nbsp;mm)</li>
+            <li>Mechanische Fertigung auf Anfrage</li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <div class="ico">🔬</div>
+          <h3>Industrielabor</h3>
+          <ul>
+            <li>Spektralanalyse von Stahl</li>
+            <li>Härteprüfung nach Brinell, Vickers &amp; Rockwell</li>
+            <li>Weitere Prüfverfahren auf Anfrage</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="leistungen.html" class="btn btn-ghost">Vollständiges Leistungsspektrum →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Labor Banner ── -->
+  <section class="block lab" id="labor">
+    <div class="wrap lab-grid">
+      <div>
+        <span class="kicker">Qualitätssicherung</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.6rem);text-transform:uppercase;margin-bottom:1rem;">
+          Geprüfte Qualität aus eigenem Labor
+        </h2>
+        <p style="color:var(--text-mid);">
+          Wir behandeln Ihre Ware mit größter Sorgfalt und modernsten Mitteln. Im eigenen
+          Industrielabor prüfen und dokumentieren wir Härte und Werkstoffgüte – für nachvollziehbare,
+          verlässliche Ergebnisse.
+        </p>
+        <div class="lab-list">
+          <span class="chip">Brinell</span>
+          <span class="chip">Vickers</span>
+          <span class="chip">Rockwell</span>
+          <span class="chip">Spektralanalyse</span>
+          <span class="chip">Einhärtetiefe</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>Ihr Auftrag – gut vorbereitet</h3>
+        <p style="color:var(--text-mid);font-size:.95rem;margin-bottom:1rem;">
+          Für eine reibungslose Bearbeitung legen Sie Ihren Werkstücken idealerweise bei:
+        </p>
+        <ul>
+          <li>Stückzahl &amp; Bezeichnung</li>
+          <li>Werkstoff (Norm / Analyse / Marke)</li>
+          <li>Gewünschte Behandlung</li>
+          <li>Geforderte Eigenschaften &amp; Prüfmethode</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Kontakt ── -->
+  <section class="block" id="kontakt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Kontakt</span>
+        <h2>Anfrage &amp; Beratung</h2>
+        <p>Schildern Sie uns Ihr Bauteil und die gewünschte Behandlung – wir melden uns kurzfristig zurück.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Empfänger der Anfragen: mt@mtw-online.com (bei FormSubmit einmalig per Bestätigungsmail aktivieren). -->
+        <form action="https://formsubmit.co/mt@mtw-online.com" method="POST">
+          <!-- Spamschutz (Honeypot) -->
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
+          <!-- FormSubmit-Optionen -->
+          <input type="hidden" name="_subject" value="Neue Anfrage über mtw-online.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="true" />
+
+          <div class="form-field">
+            <label for="name">Name / Firma</label>
+            <input id="name" type="text" name="Name" required placeholder="Mustermann GmbH" />
+          </div>
+          <div class="form-field">
+            <label for="email">E-Mail</label>
+            <input id="email" type="email" name="E-Mail" required placeholder="kontakt@firma.de" />
+          </div>
+          <div class="form-field">
+            <label for="phone">Telefon (optional)</label>
+            <input id="phone" type="tel" name="Telefon" placeholder="0…" />
+          </div>
+          <div class="form-field">
+            <label for="msg">Ihre Anfrage</label>
+            <textarea id="msg" name="Nachricht" required placeholder="Werkstoff, Verfahren, Stückzahl, gewünschte Eigenschaften …"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Anfrage absenden →</button>
+          <p class="form-note">
+            Mit dem Absenden erklären Sie sich damit einverstanden, dass Ihre Angaben zur
+            Bearbeitung der Anfrage verarbeitet werden. Details in der
+            <a href="datenschutz.html" style="color:var(--ember-hot);">Datenschutzerklärung</a>.
+          </p>
+        </form>
+
+        <div class="contact-info">
+          <h3>MTW Härtetechnik</h3>
+          <div class="ci-row">
+            <span class="ci-ico">📍</span>
+            <div>
+              <div class="lbl">Anschrift</div>
+              <div class="val">Marius Thoma Wärmebehandlungsservice e. K.<br />Helten 22<br />51545 Waldbröl</div>
+            </div>
+          </div>
+          <div class="ci-row">
+            <span class="ci-ico">📞</span>
+            <div>
+              <div class="lbl">Telefon</div>
+              <a class="val" href="tel:+4916339459160">0163 – 3 94 59 16</a>
+            </div>
+          </div>
+          <div class="ci-row">
+            <span class="ci-ico">✉️</span>
+            <div>
+              <div class="lbl">E-Mail</div>
+              <a class="val" href="mailto:mt@mtw-online.com">mt@mtw-online.com</a>
+            </div>
+          </div>
+          <div class="ci-row">
+            <span class="ci-ico">🌐</span>
+            <div>
+              <div class="lbl">Web</div>
+              <a class="val" href="https://www.mtw-online.com">www.mtw-online.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <a href="#top" class="logo"><span class="mark"></span> M<b>T</b>W</a>
+          <p>Marius Thoma Wärmebehandlungsservice e. K.<br />Härte- · Beschichtungs- · Nitriertechnik</p>
+        </div>
+        <div class="foot-col">
+          <div class="foot-links">
+            <a href="leistungen.html">Leistungen</a>
+            <a href="#ueber">Über uns</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Marius Thoma Wärmebehandlungsservice e. K. · Waldbröl</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile-Menü
+    const t = document.getElementById('navtoggle');
+    const l = document.getElementById('navlinks');
+    t.addEventListener('click', () => l.classList.toggle('open'));
+    l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => l.classList.remove('open')));
+  </script>
+
+</body>
+</html>

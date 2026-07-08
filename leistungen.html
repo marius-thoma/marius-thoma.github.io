@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leistungsspektrum · MTW Härtetechnik</title>
+  <meta name="description" content="Das vollständige Leistungsspektrum von MTW Härtetechnik: Härten, Glühen & Anlassen, Nitrieren, Beschichten & Veredeln, Schweißtechnik, Richten und Industrielabor – mit allen Verfahren und Abmessungen." />
+  <link rel="canonical" href="https://www.mtw-online.com/leistungen.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --steel-900:#0e1013; --steel-800:#14171c; --steel-700:#1c2027; --steel-600:#262b33; --steel-500:#333944;
+      --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.16);
+      --ember:#ff6a1a; --ember-hot:#ff8f3c; --ember-deep:#d84a06; --spark:#ffc76b;
+      --text:#e9ecf1; --text-mid:#b3bac6; --text-dim:#7d8493;
+      --radius:10px; --maxw:1120px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; background:var(--steel-900); color:var(--text); line-height:1.6; overflow-x:hidden;
+      background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 1px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 3px); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
+    h1,h2,h3,.logo { font-family:'Oswald',sans-serif; letter-spacing:.01em; line-height:1.1; }
+
+    /* Nav */
+    header { position:sticky; top:0; z-index:50; background:rgba(14,16,19,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+    nav { display:flex; align-items:center; justify-content:space-between; height:64px; max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
+    .logo { font-size:22px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; display:flex; align-items:center; gap:.6rem; }
+    .logo b { color:var(--ember); }
+    .logo .mark { width:26px; height:26px; border-radius:5px; background:linear-gradient(135deg,var(--ember-hot),var(--ember-deep)); box-shadow:0 0 14px rgba(255,106,26,.5); display:inline-block; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--text-mid); text-transform:uppercase; letter-spacing:.06em; transition:color .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--ember-hot); }
+    .nav-toggle { display:none; background:none; border:0; color:var(--text); font-size:26px; cursor:pointer; }
+
+    /* Page header */
+    .page-head { position:relative; overflow:hidden; padding:5rem 0 3.5rem;
+      background: radial-gradient(1000px 400px at 78% -20%, rgba(255,106,26,.20), transparent 60%), linear-gradient(180deg, var(--steel-800), var(--steel-900)); }
+    .page-head .kicker { font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.18em; color:var(--ember); display:block; margin-bottom:.8rem; }
+    .page-head h1 { font-size:clamp(2.4rem,5vw,3.6rem); text-transform:uppercase; margin-bottom:1rem; }
+    .page-head p { color:var(--text-mid); font-size:1.1rem; max-width:640px; }
+    .crumbs { font-size:.85rem; color:var(--text-dim); margin-bottom:1.6rem; }
+    .crumbs a:hover { color:var(--ember-hot); }
+
+    /* Quick-Nav */
+    .quicknav { background:var(--steel-800); border-top:1px solid var(--line); border-bottom:1px solid var(--line); position:sticky; top:64px; z-index:40; }
+    .quicknav .wrap { display:flex; gap:.6rem; overflow-x:auto; padding-top:.8rem; padding-bottom:.8rem; }
+    .quicknav a { white-space:nowrap; font-size:.85rem; padding:.45rem 1rem; border-radius:999px; background:var(--steel-600);
+      border:1px solid var(--line-strong); color:var(--text-mid); transition:all .2s; }
+    .quicknav a:hover { border-color:var(--ember-hot); color:var(--ember-hot); }
+
+    /* Groups */
+    .group { padding:4rem 0 1rem; border-bottom:1px solid var(--line); }
+    .group:last-of-type { border-bottom:0; }
+    .group-head { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
+    .group-head .ico { width:52px; height:52px; border-radius:11px; display:grid; place-items:center; font-size:26px; flex-shrink:0;
+      background:linear-gradient(135deg, rgba(255,143,60,.18), rgba(216,74,6,.12)); border:1px solid rgba(255,106,26,.3); }
+    .group-head h2 { font-size:clamp(1.7rem,3.5vw,2.4rem); text-transform:uppercase; }
+    .group-head .num { font-family:'Oswald'; color:var(--ember); font-size:1rem; letter-spacing:.1em; }
+
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; margin-bottom:2rem; }
+    .card { background:var(--steel-700); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem 1.7rem;
+      transition:border-color .2s, transform .2s; }
+    .card:hover { border-color:rgba(255,106,26,.45); transform:translateY(-2px); }
+    .card h3 { font-size:1.25rem; text-transform:uppercase; margin-bottom:.4rem; }
+    .card > p { color:var(--text-mid); font-size:.92rem; margin-bottom:1rem; }
+    .spec { list-style:none; }
+    .spec li { display:flex; justify-content:space-between; gap:1rem; padding:.5rem 0; border-bottom:1px solid var(--line); font-size:.88rem; }
+    .spec li:last-child { border-bottom:0; }
+    .spec .k { color:var(--text-dim); }
+    .spec .v { color:var(--text); text-align:right; font-weight:500; }
+    .tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.4rem; }
+    .tag { font-size:.8rem; padding:.35rem .8rem; border-radius:999px; background:var(--steel-600); border:1px solid var(--line-strong); color:var(--text-mid); }
+
+    /* CTA */
+    .cta { padding:4.5rem 0; text-align:center;
+      background: radial-gradient(700px 300px at 50% 120%, rgba(255,106,26,.16), transparent 60%), var(--steel-800);
+      border-top:1px solid var(--line); }
+    .cta h2 { font-size:clamp(1.8rem,4vw,2.6rem); text-transform:uppercase; margin-bottom:1rem; }
+    .cta p { color:var(--text-mid); max-width:560px; margin:0 auto 2rem; }
+    .btn { display:inline-flex; align-items:center; gap:.5rem; font-weight:600; font-size:15px; padding:.9rem 1.8rem; border-radius:var(--radius); cursor:pointer; transition:transform .15s, box-shadow .2s; border:0;
+      background:linear-gradient(135deg,var(--ember-hot),var(--ember-deep)); color:#fff; box-shadow:0 6px 24px rgba(255,106,26,.35); }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(255,106,26,.5); }
+
+    /* Footer */
+    footer.site { background:var(--steel-900); border-top:1px solid var(--line); padding:3rem 0 2rem; }
+    .foot-grid { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; }
+    .foot-grid .logo { font-size:18px; margin-bottom:.8rem; }
+    .foot-col p { color:var(--text-dim); font-size:.9rem; }
+    .foot-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .foot-links a { color:var(--text-mid); font-size:.9rem; }
+    .foot-links a:hover { color:var(--ember-hot); }
+    .copyright { margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--text-dim); font-size:.82rem; text-align:center; }
+
+    @media (max-width:820px) { .cards { grid-template-columns:1fr; } }
+    @media (max-width:640px) {
+      .nav-links { display:none; }
+      .nav-toggle { display:block; }
+      .nav-links.open { display:flex; position:absolute; top:64px; left:0; right:0; flex-direction:column; background:var(--steel-800); border-bottom:1px solid var(--line); padding:1rem 1.5rem; gap:1rem; }
+      .quicknav { top:64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo"><span class="mark"></span> M<b>T</b>W</a>
+      <ul class="nav-links" id="navlinks">
+        <li><a href="leistungen.html" class="active">Leistungen</a></li>
+        <li><a href="index.html#ueber">Über uns</a></li>
+        <li><a href="index.html#labor">Labor</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navtoggle" aria-label="Menü">☰</button>
+    </nav>
+  </header>
+
+  <!-- Page header -->
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Start</a> &nbsp;/&nbsp; Leistungsspektrum</div>
+      <span class="kicker">Leistungsspektrum</span>
+      <h1>Alle Verfahren im Detail</h1>
+      <p>
+        Von der Wärmebehandlung bis zur Oberflächenveredelung – über 20 Verfahren aus einer Hand,
+        mit den jeweiligen Abmessungen, Temperaturen und Kennwerten.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick-Nav -->
+  <div class="quicknav">
+    <div class="wrap">
+      <a href="#haerten">Härten</a>
+      <a href="#gluehen">Glühen &amp; Anlassen</a>
+      <a href="#nitrieren">Nitrieren</a>
+      <a href="#beschichten">Beschichten &amp; Veredeln</a>
+      <a href="#weitere">Weitere Verfahren</a>
+      <a href="#labor">Industrielabor</a>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <!-- 1 Härten -->
+    <section class="group" id="haerten">
+      <div class="group-head">
+        <div class="ico">🔥</div>
+        <div>
+          <span class="num">01</span>
+          <h2>Härten</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Einsatzhärten im Salzbad</h3>
+          <p>Aufkohlen und Härten für verschleißfeste Randschichten bei zähem Kern.</p>
+          <ul class="spec">
+            <li><span class="k">max. Nutzmasse</span><span class="v">Ø 700 × 1.000 mm</span></li>
+            <li><span class="k">Einhärtetiefen</span><span class="v">0,4 – 1,2 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Vakuumverfahren</h3>
+          <p>Sauberes, verzugsarmes Härten unter Vakuum – auch für hohe Temperaturen.</p>
+          <ul class="spec">
+            <li><span class="k">Abmessungen (B×H×T)</span><span class="v">600×600×900 bis&nbsp;2.000×1.400×3.000 mm</span></li>
+            <li><span class="k">Härtetemperaturen</span><span class="v">bis über 1.100 °C</span></li>
+          </ul>
+          <div class="tags"><span class="tag">bis 900 °C</span><span class="tag">bis 1050 °C</span><span class="tag">bis 1.100 °C</span><span class="tag">über 1.100 °C</span></div>
+        </div>
+        <div class="card">
+          <h3>Salzbadverfahren</h3>
+          <p>Gleichmäßige Erwärmung im Salzbad für präzise Härteergebnisse.</p>
+          <ul class="spec">
+            <li><span class="k">max. Nutzmasse</span><span class="v">Ø 600 × 1.300 mm</span></li>
+            <li><span class="k">Härtetemperaturen</span><span class="v">bis über 1.100 °C</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Induktiv- &amp; Flammhärten</h3>
+          <p>Randschichthärten gezielt an belasteten Zonen – auch für große Bauteile.</p>
+          <ul class="spec">
+            <li><span class="k">Induktivhärten</span><span class="v">bis Ø 1.000 × 10.000 mm (16 t)</span></li>
+            <li><span class="k">Umlaufhärten</span><span class="v">bis Ø 1.250 mm</span></li>
+            <li><span class="k">Einzelzahnhärtung</span><span class="v">bis Ø 5.500 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tiefkühlen</h3>
+          <p>Umwandlung von Restaustenit zur Steigerung von Härte und Maßstabilität.</p>
+          <ul class="spec">
+            <li><span class="k">Verfahren</span><span class="v">nach Wärmebehandlung</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 Glühen -->
+    <section class="group" id="gluehen">
+      <div class="group-head">
+        <div class="ico">🌡️</div>
+        <div>
+          <span class="num">02</span>
+          <h2>Glühen &amp; Anlassen</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Spannungsarmglühen</h3>
+          <p>Abbau von Eigenspannungen – mit oder ohne Schutzgas.</p>
+          <ul class="spec">
+            <li><span class="k">max. Nutzmasse</span><span class="v">Ø 1.350 – 7.300 mm</span></li>
+            <li><span class="k">bzw. Tiefe</span><span class="v">Ø 2.700 – 3.800 mm tief</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Weich-, Normal- &amp; Lösungsglühen</h3>
+          <p>Gezielte Gefügeeinstellung für Bearbeitbarkeit und Werkstoffeigenschaften.</p>
+          <ul class="spec">
+            <li><span class="k">max. Nutzmasse</span><span class="v">Ø 840 – 1.200 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Anlassen</h3>
+          <p>Einstellen der gewünschten Zähigkeit nach dem Härten.</p>
+          <ul class="spec">
+            <li><span class="k">Temperaturbereich</span><span class="v">bis 200 °C · 200 – 700 °C</span></li>
+            <li><span class="k">max. Nutzmasse</span><span class="v">900 × 600 × 600 mm</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Nitrieren -->
+    <section class="group" id="nitrieren">
+      <div class="group-head">
+        <div class="ico">⚗️</div>
+        <div>
+          <span class="num">03</span>
+          <h2>Nitrieren</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Gasnitrieren</h3>
+          <p>Voll- und Teilnitrierung mit Pastenabdeckung für harte, verschleißfeste Oberflächen.</p>
+          <ul class="spec">
+            <li><span class="k">Nitrierhärtetiefe</span><span class="v">0,1 – 1,0 mm</span></li>
+            <li><span class="k">Öfen (Nutzdurchmesser)</span><span class="v">Ø 320 – 3.000 mm</span></li>
+            <li><span class="k">Nutztiefe</span><span class="v">460 – 6.950 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Plasmanitrieren</h3>
+          <p>Für niedrig- bis hochlegierte Stähle und Sonderbehandlungen unter 530 °C.</p>
+          <ul class="spec">
+            <li><span class="k">Nitrierhärtetiefe</span><span class="v">0,1 – 0,6 mm</span></li>
+            <li><span class="k">Öfen</span><span class="v">bis Ø 800 × 1.800 mm</span></li>
+            <li><span class="k">größere Abm.</span><span class="v">auf Anfrage</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Badnitrieren</h3>
+          <p>Kurze Behandlungszeiten für Verschleiß- und Korrosionsschutz.</p>
+          <ul class="spec">
+            <li><span class="k">max. Nutzmasse</span><span class="v">Ø 500 × 800 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Nitrocarburieren</h3>
+          <p>Verbesserte Verschleiß- und Korrosionsbeständigkeit auch für große Teile.</p>
+          <ul class="spec">
+            <li><span class="k">max. Abmessung</span><span class="v">Ø 2.500 × 3.400 mm</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Beschichten -->
+    <section class="group" id="beschichten">
+      <div class="group-head">
+        <div class="ico">⚙️</div>
+        <div>
+          <span class="num">04</span>
+          <h2>Beschichten &amp; Veredeln</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Galvanisches Verzinken</h3>
+          <p>Gestellware, Ruhebad und Trommelverfahren – mit Chromatierung.</p>
+          <ul class="spec">
+            <li><span class="k">Abmessungen</span><span class="v">7.900 × 2.100 × 700 mm</span></li>
+          </ul>
+          <div class="tags"><span class="tag">blau-chromatiert</span><span class="tag">gelb-chromatiert</span></div>
+        </div>
+        <div class="card">
+          <h3>Eloxieren</h3>
+          <p>Gestellware, Vorbehandlung E 0 + E 6 – dekorativ und korrosionsbeständig.</p>
+          <ul class="spec">
+            <li><span class="k">Abmessungen</span><span class="v">7.350 × 1.500 × 600 mm</span></li>
+          </ul>
+          <div class="tags"><span class="tag">EV 1 Silber</span><span class="tag">EV 2 Neusilber</span><span class="tag">EV 3 Gold</span><span class="tag">EV 6 Schwarz</span></div>
+        </div>
+        <div class="card">
+          <h3>Chemisch Vernickeln</h3>
+          <p>Gleichmäßige Nickelschicht für Massen- und Gestellteile.</p>
+          <ul class="spec">
+            <li><span class="k">max. Länge</span><span class="v">bis 1.200 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>PVD- &amp; CVD-Beschichtung</h3>
+          <p>Hochharte Funktionsschichten für Werkzeuge und Bauteile.</p>
+          <ul class="spec">
+            <li><span class="k">Verfahren</span><span class="v">TiC · TiC/TiN (CVD)</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Beizen &amp; Brünieren</h3>
+          <p>Reinigung und dekorativer Korrosionsschutz.</p>
+          <ul class="spec">
+            <li><span class="k">Bäder (B×H×L)</span><span class="v">480 × 500 × 1.900 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Phosphatieren &amp; Black-Ox</h3>
+          <p>Haftgrund und Korrosionsschutzschichten.</p>
+          <ul class="spec">
+            <li><span class="k">Phosphatier-Bäder</span><span class="v">480 × 500 × 1.900 mm</span></li>
+            <li><span class="k">Black-Ox-Ofen</span><span class="v">Ø 800 × 1.800 mm</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Weitere -->
+    <section class="group" id="weitere">
+      <div class="group-head">
+        <div class="ico">🛠️</div>
+        <div>
+          <span class="num">05</span>
+          <h2>Weitere Verfahren</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Schweißtechnik</h3>
+          <p>Elektroden- und Schutzgasschweißen sowie Reparaturschweißen aller Art.</p>
+          <ul class="spec">
+            <li><span class="k">Verfahren</span><span class="v">E-Hand · MIG/MAG · Reparatur</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Trockenstrahlen</h3>
+          <p>Reinigungsstrahlen mit Stahlkugeln für saubere Oberflächen.</p>
+          <ul class="spec">
+            <li><span class="k">Anlage</span><span class="v">Ø 1.500 × 1.500 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Richten</h3>
+          <p>Präzisionsrichtpressen für verzugsbehaftete Bauteile.</p>
+          <ul class="spec">
+            <li><span class="k">max. Pressdruck</span><span class="v">800 t</span></li>
+            <li><span class="k">max. Werkstücklänge</span><span class="v">10.000 mm</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mechanische Fertigung</h3>
+          <p>Ergänzende Bearbeitung nach Bedarf.</p>
+          <ul class="spec">
+            <li><span class="k">Umfang</span><span class="v">auf Anfrage</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Labor -->
+    <section class="group" id="labor">
+      <div class="group-head">
+        <div class="ico">🔬</div>
+        <div>
+          <span class="num">06</span>
+          <h2>Industrielabor</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Werkstoffanalyse</h3>
+          <p>Spektralanalyse von Stahl zur Werkstoffbestimmung.</p>
+          <ul class="spec">
+            <li><span class="k">Verfahren</span><span class="v">Spektralanalyse</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Härteprüfung</h3>
+          <p>Dokumentierte Härtemessung nach den gängigen Verfahren.</p>
+          <ul class="spec">
+            <li><span class="k">Methoden</span><span class="v">Brinell · Vickers · Rockwell</span></li>
+            <li><span class="k">Weiteres</span><span class="v">auf Anfrage</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>Passendes Verfahren gefunden?</h2>
+      <p>Schildern Sie uns Ihr Bauteil, den Werkstoff und die gewünschten Eigenschaften – wir beraten Sie und erstellen Ihr Angebot.</p>
+      <a href="index.html#kontakt" class="btn">Anfrage senden →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <a href="index.html" class="logo"><span class="mark"></span> M<b>T</b>W</a>
+          <p>Marius Thoma Wärmebehandlungsservice e. K.<br />Härte- · Beschichtungs- · Nitriertechnik</p>
+        </div>
+        <div class="foot-col">
+          <div class="foot-links">
+            <a href="leistungen.html">Leistungen</a>
+            <a href="index.html#ueber">Über uns</a>
+            <a href="index.html#kontakt">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Marius Thoma Wärmebehandlungsservice e. K. · Waldbröl</div>
+    </div>
+  </footer>
+
+  <script>
+    const t = document.getElementById('navtoggle');
+    const l = document.getElementById('navlinks');
+    t.addEventListener('click', () => l.classList.toggle('open'));
+    l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => l.classList.remove('open')));
+  </script>
+
+</body>
+</html>
