@@ -6,6 +6,7 @@
   <title>Leistungsspektrum · MTW Härtetechnik</title>
   <meta name="description" content="Das vollständige Leistungsspektrum von MTW Härtetechnik: Härten, Glühen & Anlassen, Nitrieren, Beschichten & Veredeln, Schweißtechnik, Richten und Industrielabor – mit allen Verfahren und Abmessungen." />
   <link rel="canonical" href="https://www.mtw-online.com/leistungen.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,9 +32,12 @@
     /* Nav */
     header { position:sticky; top:0; z-index:50; background:rgba(14,16,19,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
     nav { display:flex; align-items:center; justify-content:space-between; height:64px; max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
-    .logo { font-size:22px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; display:flex; align-items:center; gap:.6rem; }
-    .logo b { color:var(--ember); }
-    .logo .mark { width:26px; height:26px; border-radius:5px; background:linear-gradient(135deg,var(--ember-hot),var(--ember-deep)); box-shadow:0 0 14px rgba(255,106,26,.5); display:inline-block; }
+    .logo { display:flex; align-items:center; gap:.7rem; text-decoration:none; }
+    .logo-mark { height:42px; width:auto; display:block; flex-shrink:0; filter:drop-shadow(0 0 12px rgba(255,106,26,.35)); }
+    .logo-text { display:flex; flex-direction:column; line-height:1.05; }
+    .logo-name { font-family:'Oswald',sans-serif; font-weight:600; font-size:19px; letter-spacing:.06em; text-transform:uppercase; color:var(--text); }
+    .logo-name b { color:var(--ember); font-weight:600; }
+    .logo-sub { font-family:'Inter',sans-serif; font-size:9.5px; font-weight:500; letter-spacing:.11em; text-transform:uppercase; color:var(--text-dim); margin-top:2px; }
     .nav-links { display:flex; gap:2rem; list-style:none; }
     .nav-links a { font-size:14px; font-weight:500; color:var(--text-mid); text-transform:uppercase; letter-spacing:.06em; transition:color .2s; }
     .nav-links a:hover, .nav-links a.active { color:var(--ember-hot); }
@@ -91,7 +95,8 @@
     /* Footer */
     footer.site { background:var(--steel-900); border-top:1px solid var(--line); padding:3rem 0 2rem; }
     .foot-grid { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; }
-    .foot-grid .logo { font-size:18px; margin-bottom:.8rem; }
+    .foot-grid .logo { margin-bottom:.8rem; }
+    .foot-grid .logo-mark { height:34px; filter:none; }
     .foot-col p { color:var(--text-dim); font-size:.9rem; }
     .foot-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
     .foot-links a { color:var(--text-mid); font-size:.9rem; }
@@ -112,7 +117,26 @@
   <!-- Nav -->
   <header>
     <nav>
-      <a href="index.html" class="logo"><span class="mark"></span> M<b>T</b>W</a>
+      <a href="index.html" class="logo" aria-label="MTW – Marius Thoma Wärmebehandlungsservice e. K.">
+        <svg class="logo-mark" viewBox="0 0 128 116" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="mtwGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff8f3c"/>
+              <stop offset="100%" stop-color="#d84a06"/>
+            </linearGradient>
+          </defs>
+          <rect x="5" y="5" width="118" height="106" rx="22" fill="url(#mtwGradNav)"/>
+          <text x="64" y="58" text-anchor="middle" dominant-baseline="central"
+                font-family="Oswald, sans-serif" font-weight="700" font-size="50"
+                fill="#ffffff" textLength="92" lengthAdjust="spacingAndGlyphs">MTW</text>
+          <text x="112" y="99" text-anchor="end" font-family="Inter, sans-serif"
+                font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)">e.K.</text>
+        </svg>
+        <span class="logo-text">
+          <span class="logo-name">Marius <b>Thoma</b></span>
+          <span class="logo-sub">Wärmebehandlungsservice e. K.</span>
+        </span>
+      </a>
       <ul class="nav-links" id="navlinks">
         <li><a href="leistungen.html" class="active">Leistungen</a></li>
         <li><a href="index.html#ueber">Über uns</a></li>
@@ -429,8 +453,24 @@
     <div class="wrap">
       <div class="foot-grid">
         <div class="foot-col">
-          <a href="index.html" class="logo"><span class="mark"></span> M<b>T</b>W</a>
-          <p>Marius Thoma Wärmebehandlungsservice e. K.<br />Härte- · Beschichtungs- · Nitriertechnik</p>
+          <a href="index.html" class="logo" aria-label="MTW">
+            <svg class="logo-mark" viewBox="0 0 128 116" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="mtwGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff8f3c"/>
+                  <stop offset="100%" stop-color="#d84a06"/>
+                </linearGradient>
+              </defs>
+              <rect x="5" y="5" width="118" height="106" rx="22" fill="url(#mtwGradFoot)"/>
+              <text x="64" y="58" text-anchor="middle" dominant-baseline="central"
+                    font-family="Oswald, sans-serif" font-weight="700" font-size="50"
+                    fill="#ffffff" textLength="92" lengthAdjust="spacingAndGlyphs">MTW</text>
+              <text x="112" y="99" text-anchor="end" font-family="Inter, sans-serif"
+                    font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)">e.K.</text>
+            </svg>
+            <span class="logo-name" style="font-size:18px;">Marius <b>Thoma</b></span>
+          </a>
+          <p>Wärmebehandlungsservice e. K.<br />Härte- · Beschichtungs- · Nitriertechnik</p>
         </div>
         <div class="foot-col">
           <div class="foot-links">
