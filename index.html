@@ -241,20 +241,15 @@
 
     /* Kontakt */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .form-field { margin-bottom: 1.1rem; }
-    .form-field label { display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em;
-      color: var(--text-dim); margin-bottom: .4rem; font-weight: 600; }
-    .form-field input, .form-field textarea {
-      width: 100%; background: var(--steel-700); border: 1px solid var(--line-strong);
-      border-radius: 8px; padding: .8rem 1rem; color: var(--text); font-size: .95rem; font-family: inherit;
-      transition: border-color .2s;
-    }
-    .form-field input:focus, .form-field textarea:focus {
-      outline: none; border-color: var(--ember-hot); box-shadow: 0 0 0 3px rgba(255,106,26,0.15);
-    }
-    .form-field textarea { resize: vertical; min-height: 140px; }
-    .form-note { font-size: .8rem; color: var(--text-dim); margin-top: 1rem; }
-    .hp { position: absolute; left: -9999px; }
+    .contact-cta h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: .8rem; }
+    .contact-cta > p { color: var(--text-mid); margin-bottom: 1.6rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2rem; }
+    .contact-checklist { background: var(--steel-700); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem 1.6rem; }
+    .contact-checklist .cl-title { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-dim); margin-bottom: .8rem; font-weight: 600; }
+    .contact-checklist ul { list-style: none; }
+    .contact-checklist li { font-size: .92rem; color: var(--text-mid); padding: .35rem 0 .35rem 1.4rem; position: relative; }
+    .contact-checklist li::before { content: "✦"; position: absolute; left: 0; color: var(--ember); font-size: .8rem; }
 
     .contact-info { background: var(--steel-700); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; }
     .contact-info h3 { text-transform: uppercase; font-size: 1.3rem; margin-bottom: 1.5rem; }
@@ -543,38 +538,25 @@
       </div>
 
       <div class="contact-grid">
-        <!-- Empfänger der Anfragen: mt@mtw-online.com (bei FormSubmit einmalig per Bestätigungsmail aktivieren). -->
-        <form action="https://formsubmit.co/mt@mtw-online.com" method="POST">
-          <!-- Spamschutz (Honeypot) -->
-          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
-          <!-- FormSubmit-Optionen -->
-          <input type="hidden" name="_subject" value="Neue Anfrage über mtw-online.com" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="true" />
+        <div class="contact-cta">
+          <h3>So erreichen Sie uns</h3>
+          <p>Senden Sie uns Ihre Anfrage – gerne samt Zeichnung – direkt per E-Mail oder rufen Sie uns an. Wir melden uns kurzfristig bei Ihnen zurück.</p>
 
-          <div class="form-field">
-            <label for="name">Name / Firma</label>
-            <input id="name" type="text" name="Name" required placeholder="Mustermann GmbH" />
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:mt@mtw-online.com?subject=Anfrage%20über%20mtw-online.com&amp;body=Sehr%20geehrte%20Damen%20und%20Herren,%0D%0A%0D%0Aich%20möchte%20folgendes%20Bauteil%20anfragen:%0D%0A%0D%0A-%20Stückzahl%20/%20Bezeichnung:%20%0D%0A-%20Werkstoff:%20%0D%0A-%20Gewünschte%20Behandlung:%20%0D%0A-%20Geforderte%20Eigenschaften%20/%20Prüfmethode:%20%0D%0A%0D%0A(Zeichnung%20bitte%20als%20Anhang%20beifügen)%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A">✉ E-Mail schreiben</a>
+            <a class="btn btn-ghost" href="tel:+4916339459160">📞 0163 – 3 94 59 16</a>
           </div>
-          <div class="form-field">
-            <label for="email">E-Mail</label>
-            <input id="email" type="email" name="E-Mail" required placeholder="kontakt@firma.de" />
+
+          <div class="contact-checklist">
+            <p class="cl-title">Für ein schnelles Angebot bitte angeben:</p>
+            <ul>
+              <li>Stückzahl &amp; Bezeichnung</li>
+              <li>Werkstoff (Norm / Analyse / Marke)</li>
+              <li>Gewünschte Behandlung &amp; geforderte Eigenschaften</li>
+              <li>Zeichnung als Anhang (PDF, JPG, PNG, DWG, STEP …)</li>
+            </ul>
           </div>
-          <div class="form-field">
-            <label for="phone">Telefon (optional)</label>
-            <input id="phone" type="tel" name="Telefon" placeholder="0…" />
-          </div>
-          <div class="form-field">
-            <label for="msg">Ihre Anfrage</label>
-            <textarea id="msg" name="Nachricht" required placeholder="Werkstoff, Verfahren, Stückzahl, gewünschte Eigenschaften …"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Anfrage absenden →</button>
-          <p class="form-note">
-            Mit dem Absenden erklären Sie sich damit einverstanden, dass Ihre Angaben zur
-            Bearbeitung der Anfrage verarbeitet werden. Details in der
-            <a href="datenschutz.html" style="color:var(--ember-hot);">Datenschutzerklärung</a>.
-          </p>
-        </form>
+        </div>
 
         <div class="contact-info">
           <h3>MTW Härtetechnik</h3>
