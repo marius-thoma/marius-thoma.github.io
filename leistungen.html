@@ -38,6 +38,11 @@
     .logo-name { font-family:'Oswald',sans-serif; font-weight:600; font-size:19px; letter-spacing:.06em; text-transform:uppercase; color:var(--text); }
     .logo-name b { color:var(--ember); font-weight:600; }
     .logo-sub { font-family:'Inter',sans-serif; font-size:9.5px; font-weight:500; letter-spacing:.11em; text-transform:uppercase; color:var(--text-dim); margin-top:2px; }
+    .logo-img { display:block; height:38px; aspect-ratio:669/146;
+      background:linear-gradient(135deg,var(--ember-hot),var(--ember-deep));
+      -webkit-mask:url('bilder/transparent_nur_mtw.png') no-repeat center/contain;
+              mask:url('bilder/transparent_nur_mtw.png') no-repeat center/contain;
+      filter:drop-shadow(0 0 10px rgba(255,106,26,.35)); }
     .nav-links { display:flex; gap:2rem; list-style:none; }
     .nav-links a { font-size:14px; font-weight:500; color:var(--text-mid); text-transform:uppercase; letter-spacing:.06em; transition:color .2s; }
     .nav-links a:hover, .nav-links a.active { color:var(--ember-hot); }
@@ -97,6 +102,7 @@
     .foot-grid { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; }
     .foot-grid .logo { margin-bottom:.8rem; }
     .foot-grid .logo-mark { height:34px; filter:none; }
+    .foot-grid .logo-img { height:30px; filter:none; }
     .foot-col p { color:var(--text-dim); font-size:.9rem; }
     .foot-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
     .foot-links a { color:var(--text-mid); font-size:.9rem; }
@@ -118,24 +124,7 @@
   <header>
     <nav>
       <a href="index.html" class="logo" aria-label="MTW – Marius Thoma Wärmebehandlungsservice e. K.">
-        <svg class="logo-mark" viewBox="0 0 128 116" role="img" aria-hidden="true">
-          <defs>
-            <linearGradient id="mtwGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ff8f3c"/>
-              <stop offset="100%" stop-color="#d84a06"/>
-            </linearGradient>
-          </defs>
-          <rect x="5" y="5" width="118" height="106" rx="22" fill="url(#mtwGradNav)"/>
-          <text x="64" y="58" text-anchor="middle" dominant-baseline="central"
-                font-family="Oswald, sans-serif" font-weight="700" font-size="50"
-                fill="#ffffff" textLength="92" lengthAdjust="spacingAndGlyphs">MTW</text>
-          <text x="112" y="99" text-anchor="end" font-family="Inter, sans-serif"
-                font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)">e.K.</text>
-        </svg>
-        <span class="logo-text">
-          <span class="logo-name">Marius <b>Thoma</b></span>
-          <span class="logo-sub">Wärmebehandlungsservice e. K.</span>
-        </span>
+        <span class="logo-img" role="img" aria-label="MTW"></span>
       </a>
       <ul class="nav-links" id="navlinks">
         <li><a href="leistungen.html" class="active">Leistungen</a></li>
@@ -455,21 +444,7 @@
       <div class="foot-grid">
         <div class="foot-col">
           <a href="index.html" class="logo" aria-label="MTW">
-            <svg class="logo-mark" viewBox="0 0 128 116" role="img" aria-hidden="true">
-              <defs>
-                <linearGradient id="mtwGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff8f3c"/>
-                  <stop offset="100%" stop-color="#d84a06"/>
-                </linearGradient>
-              </defs>
-              <rect x="5" y="5" width="118" height="106" rx="22" fill="url(#mtwGradFoot)"/>
-              <text x="64" y="58" text-anchor="middle" dominant-baseline="central"
-                    font-family="Oswald, sans-serif" font-weight="700" font-size="50"
-                    fill="#ffffff" textLength="92" lengthAdjust="spacingAndGlyphs">MTW</text>
-              <text x="112" y="99" text-anchor="end" font-family="Inter, sans-serif"
-                    font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)">e.K.</text>
-            </svg>
-            <span class="logo-name" style="font-size:18px;">Marius <b>Thoma</b></span>
+            <span class="logo-img" role="img" aria-label="MTW"></span>
           </a>
           <p>Wärmebehandlungsservice e. K.<br />Härte- · Schweiß- · Beschichtungstechnik</p>
         </div>

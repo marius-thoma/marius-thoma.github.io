@@ -22,6 +22,7 @@
     .logo-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--text)}
     .logo-name b{color:var(--ember);font-weight:600}
     .logo-sub{font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--text-dim);margin-top:2px}
+    .logo-img{display:block;height:34px;aspect-ratio:669/146;background:linear-gradient(135deg,var(--ember-hot),#d84a06);-webkit-mask:url('bilder/transparent_nur_mtw.png') no-repeat center/contain;mask:url('bilder/transparent_nur_mtw.png') no-repeat center/contain}
     .nav-links{display:flex;gap:1.4rem;list-style:none}
     .nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;text-transform:uppercase;letter-spacing:.05em}
     .nav-links a:hover{color:var(--ember-hot)}
@@ -41,24 +42,7 @@
 <body>
   <nav>
     <a href="index.html" class="logo" aria-label="MTW – Marius Thoma Wärmebehandlungsservice e. K.">
-      <svg class="logo-mark" viewBox="0 0 128 116" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="mtwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ff8f3c"/>
-            <stop offset="100%" stop-color="#d84a06"/>
-          </linearGradient>
-        </defs>
-        <rect x="5" y="5" width="118" height="106" rx="22" fill="url(#mtwGrad)"/>
-        <text x="64" y="58" text-anchor="middle" dominant-baseline="central"
-              font-family="Oswald, sans-serif" font-weight="700" font-size="50"
-              fill="#ffffff" textLength="92" lengthAdjust="spacingAndGlyphs">MTW</text>
-        <text x="112" y="99" text-anchor="end" font-family="Inter, sans-serif"
-              font-weight="600" font-size="14" fill="rgba(255,255,255,0.85)">e.K.</text>
-      </svg>
-      <span class="logo-text">
-        <span class="logo-name">Marius <b>Thoma</b></span>
-        <span class="logo-sub">Wärmebehandlungsservice e. K.</span>
-      </span>
+      <span class="logo-img" role="img" aria-label="MTW"></span>
     </a>
     <ul class="nav-links">
       <li><a href="leistungen.html">Leistungen</a></li>
